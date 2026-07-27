@@ -37,7 +37,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Home />
       <Video />
       <Details />

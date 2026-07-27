@@ -71,7 +71,7 @@ function DraggableImage({
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onTransitionEnd={() => setIsSnapping(false)}
-            className={`absolute z-20 select-none touch-none cursor-grab active:cursor-grabbing ${className}`}
+            className={`absolute z-10 select-none touch-none cursor-grab active:cursor-grabbing ${className}`}
             style={{
                 left: `${initialXPct}%`,
                 top: `${initialYPct}%`,
@@ -90,49 +90,70 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
 
 
     return (
-        <main className="relative min-h-[120vh] w-full bg-black overflow-x-hidden overflow-y-hidden">
-            {/* Grid pattern */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)",
-                    backgroundSize: "15px 15px",
-                }}
-            />
+       <main className="relative bg-red- min-h-screen sm:min-h-[120vh] w-full bg-black overflow-hidden ">
 
-            {/* Fade the grid to transparent going downward */}
-            <div
-                className="absolute inset-0 z-0"
-                style={{
-                    background: "linear-gradient(to bottom, transparent 0%, black 120%)",
-                }}
-            />
+  {/* Grid */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `
+        linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)
+      `,
+      backgroundSize: "1vw 1vw ",
+    }}
+  />
+
+  {/* Grid fade */}
+  <div
+    className="absolute inset-0 z-20"
+    style={{
+      background: "linear-gradient(to bottom, transparent 0%, black 90%)",
+    }}
+  />
+
+  {/* Background image */}
+  <div
+    className="absolute mt-2  md:mt-0 left-1/2 top-2/5 -translate-x-1/2 -translate-y-1/2 z-10 xl:w-[190vh] xl:h-[40vw] w-[80vh] h-[80vw]  rounded-2xl lg    xl:rotate-none rotate-90 " 
+    style={{
+      backgroundImage: "url('/homebg.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  />
 
             <motion.div
                 style={{ y }}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30   bg-red- text-center"
             >
-                <h1 className="tracking-tighter leading-16 font-extrabold text-7xl ">TEXT SPEED <br /> TESTING</h1>
+                <h1 className="tracking-tighter lg:leading-16 font-extrabold text-[5vw] ">TEXT SPEED <br /> TESTING</h1>
 
-                <h1 className="text-xl  text-white/40 mt-12 ">No fluff, just a blueprint</h1>
+                <h1 className="text-xl lg:text-[1vw]  text-white/40 mt-12 ">No fluff, just a blueprint</h1>
             </motion.div>
 
             <DraggableImage
-                src="pngs/camera.webp"
-                initialXPct={0}
-                initialYPct={0}
-                parallaxSpeed={0.03}
-                className="w-32 sm:w-56 md:w-96 lg:w-[42.5rem]"
+                src="/pngs/mouse.png"
+                initialXPct={12}
+                initialYPct={5}
+                parallaxSpeed={0.3}
+                className="w-[35vw] sm:w-[20vw]  rotate-12 z-20 drop-shadow-2xl"
             />
 
              
             <DraggableImage
+                src="pngs/diary.png"
+                initialXPct={63}
+                initialYPct={30}
+                 parallaxSpeed={0.2}
+                className="w-[50vw]  sm:w-[30vw] -rotate-12 z-20"
+            />
+            <DraggableImage
                 src="pngs/pencil.webp"
-                initialXPct={70}
-                initialYPct={25}
-                 parallaxSpeed={-0.2}
-                className="w-6 sm:w-9 md:w-12 rotate-12"
+                initialXPct={75}
+                initialYPct={30}
+                 parallaxSpeed={-0.3}
+                className="w-[5vw] sm:w-[2.5vw]  rotate-12 z-30"
             />
              
             <DraggableImage
@@ -141,14 +162,14 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
                 initialYPct={60}
                 parallaxSpeed={-0.2}
                 returnToOrigin
-                className="w-24 sm:w-40 md:w-64"
+                className="w-[40vw] sm:w-[20vw] z-30"
             />
             <DraggableImage
                 src="pngs/chip.webp"
                 initialXPct={90}
-                initialYPct={65}
+                initialYPct={25}
                 parallaxSpeed={0.5}
-                className="w-12 sm:w-16 md:w-24"
+                className="w-[9vw] sm:w-[7vw] z-30 -rotate-12"
             />
         </main>
     );

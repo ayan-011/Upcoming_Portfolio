@@ -57,25 +57,25 @@ function Card({ card, index }: CardProps) {
     <motion.div
       ref={ref}
       style={{ x, opacity }}
-      className="flex gap-32 min-h-[70vh] items-center"
+      className="flex gap-12 sm:gap-20 md:gap-32 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[70vh] items-center bg-black px-2"
     >
       {/* Image */}
       <div className={index % 2 !== 0 ? "order-2" : "order-1"}>
         <img
           src={card.photo}
           alt={card.title}
-          className="w-[30vw] rounded-lg"
+          className="w-[40vw]   md:w-[30vw] rounded-lg"
         />
       </div>
 
       {/* Text */}
       <div
-        className={`flex flex-col justify-center gap-5 w-[30vw] ${
+        className={`flex flex-col justify-center sm:gap-5 gap-2 md:w-[30vw] sm:w-[35vw] w-[45vw] ${
           index % 2 !== 0 ? "order-1" : "order-2"
         }`}
       >
-        <h1 className="text-4xl font-bold">{card.heading}</h1>
-        <p className="text-gray-300">{card.description}</p>
+        <h1 className="sm:text-2xl md:text-4xl font-bold">{card.heading}</h1>
+        <p className="text-gray-300 text-[12px] sm:text-lg">{card.description}</p>
       </div>
     </motion.div>
   );
@@ -83,7 +83,7 @@ function Card({ card, index }: CardProps) {
 
 const Details = () => {
   return (
-    <div className="bg-black text-white flex flex-col items-center py-20">
+    <div className="bg-black  text-white flex flex-col items-center py-20">
       {cards.map((card, index) => (
         <Card key={index} card={card} index={index} />
       ))}

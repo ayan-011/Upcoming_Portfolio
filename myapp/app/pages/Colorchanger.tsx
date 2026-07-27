@@ -14,8 +14,8 @@ const Colorchanger = () => {
   ease: "none",
   scrollTrigger: {
     trigger: sectionRef.current,
-    start: "top 60%", // starts when section just enters
-    end: "top 40%",   // finishes when section is almost at the top
+    start: "top 40%", // starts when section just enters
+    end: "top 60%",   // finishes when section is almost at the top
     scrub: 1,         // smoother than true
     // markers: true,    // remove after testing  
   },
