@@ -41,42 +41,42 @@ const cards = [
 
 const Projects = () => {
   return (
-    <section className="w-full bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+   <section className="w-full bg-white">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-r-2 border-b-2 border-[#0F6292]">
 
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="border-2 border-blue-300 overflow-hidden group cursor-pointer"
-          >
-            {/* Image */}
-            <div className="overflow-hidden">
-              <img
-                src={card.photo}
-                alt={card.title}
-                className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
+    {cards.map((card, index) => (
+      <div
+        key={index}
+        className="border-l-2 border-t-2 border-[#0F6292] overflow-hidden group cursor-pointer"
+      >
+        {/* Image */}
+        <div className="overflow-hidden">
+          <img
+            src={card.photo}
+            alt={card.title}
+            className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
 
-            {/* Content */}
-            <div className="bg-white p-8 min-h-[220px] flex flex-col justify-center">
-              <span className="text-orange-500 text-sm font-medium">
-                Featured Project
-              </span>
+        {/* Content */}
+        <div className="bg-white p-8 min-h-[220px] flex flex-col justify-center">
+          <span className="text-orange-500 text-sm font-medium">
+            Featured Project
+          </span>
 
-              <h2 className="mt-5 text-3xl font-semibold">
-                {card.title}
-              </h2>
+          <h2 className="mt-5 text-3xl font-semibold">
+            {card.title}
+          </h2>
 
-              <p className="mt-5 text-neutral-600 leading-8">
-                {card.description}
-              </p>
-            </div>
-          </div>
-        ))}
-
+          <p className="mt-5 text-neutral-600 leading-8">
+            {card.description}
+          </p>
+        </div>
       </div>
-    </section>
+    ))}
+
+  </div>
+</section>
   );
 };
 

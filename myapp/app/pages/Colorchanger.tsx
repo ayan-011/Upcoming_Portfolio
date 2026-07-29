@@ -10,7 +10,7 @@ const Colorchanger = () => {
 
   useEffect(() => {
  gsap.to("body", {
-  backgroundColor: "#8ec5ff",
+  backgroundColor: "#0F6292",
   ease: "none",
   scrollTrigger: {
     trigger: sectionRef.current,
