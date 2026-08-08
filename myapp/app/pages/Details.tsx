@@ -4,14 +4,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const cards = [
   {
     photo: "/project.jpg",
-    heading: "Creative Portfolio",
+    heading: "Creative\nPortfolio",
     title: "Creative Portfolio",
     description:
       "Modern portfolio with smooth animations and immersive scrolling experience.",
   },
   {
     photo: "/project.jpg",
-    heading: "Creative Portfolio",
+     heading: "Creative\nPortfolio",
     title: "Music Landing Page",
     description:
       "Interactive landing page with cinematic transitions and premium UI.",
@@ -74,8 +74,8 @@ function Card({ card, index }: CardProps) {
           index % 2 !== 0 ? "order-1" : "order-2"
         }`}
       >
-        <h1 className="sm:text-2xl md:text-[2.5vw] font-bold text-[#2b9ddf]">{card.heading}</h1>
-        <p className="text-gray-300 text-[12px] sm:text-[1.2vw]">{card.description}</p>
+        <h1 className="sm:text-2xl md:text-[5vw] font-bold text-[#2b9ddf] whitespace-pre-line leading-[1]">{card.heading}</h1>
+        <p className="text-gray-300 text-[12px] sm:text-[1.5vw] leading-[1]">{card.description}</p>
       </div>
     </motion.div>
   );
