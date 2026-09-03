@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import React from 'react'
+import Skills from "./Skills";
 
 
 const Colorchanger = () => {
@@ -27,6 +28,8 @@ const Colorchanger = () => {
         ref={sectionRef}
         className="  h-screen   "
       >
+
+        <Skills/>
         
       </div>
   )

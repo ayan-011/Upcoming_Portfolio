@@ -18,7 +18,7 @@ const cards = [
   },
   {
     photo: "/project.jpg",
-    heading: "Creative Portfolio",
+    heading: "Creative\nPortfolio",
     title: "3D Experience",
     description:
       "Three.js powered website with scroll-driven camera movement.",
@@ -54,36 +54,43 @@ function Card({ card, index }: CardProps) {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
+   
+    
     <motion.div
       ref={ref}
       style={{ x, opacity }}
-      className="flex gap-12 sm:gap-20 md:gap-40 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[70vh] items-center  px-2"
-    >
+      className="flex gap-6 sm:gap-20 md:gap-40 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[70vh] items-center  px-2"
+      >
+      
       {/* Image */}
       <div className={index % 2 !== 0 ? "order-2" : "order-1"}>
         <img
           src={card.photo}
           alt={card.title}
-          className="w-[40vw]   md:w-[30vw] rounded-lg"
-        />
+          className="w-[50vw] sm:w-[30vw]    rounded-lg"
+          />
       </div>
 
       {/* Text */}
       <div
-        className={`flex flex-col justify-center sm:gap-5 gap-2 md:w-[22vw]  sm:w-[35vw] w-[45vw] ${
+        className={`flex flex-col justify-center sm:gap-5 gap-2 md:w-[22vw]  sm:w-[35vw] w-[45vw] bg-red-9 ${
           index % 2 !== 0 ? "order-1" : "order-2"
         }`}
-      >
-        <h1 className="sm:text-2xl md:text-[5vw] font-bold text-[#2b9ddf] whitespace-pre-line leading-[1]">{card.heading}</h1>
+        >
+        <h1 className="text-4xl sm:text-xl md:text-[5vw] font-bold text-[#2b9ddf] whitespace-pre-line leading-[1]">{card.heading}</h1>
         <p className="text-gray-300 text-[12px] sm:text-[1.5vw] leading-[1]">{card.description}</p>
       </div>
     </motion.div>
+        
   );
 }
 
 const Details = () => {
   return (
     <div className="bg-black   text-white flex flex-col items-center py-20">
+      <div className="  w-full  h-fit  ">
+        <span className="font-bold ml-65 text-4xl text-white/70 " >COURSES THAT I HAVE FOLLOWED </span>
+      </div>
       {cards.map((card, index) => (
         <Card key={index} card={card} index={index} />
       ))}
