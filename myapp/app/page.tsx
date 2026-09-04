@@ -43,8 +43,7 @@ const Page = () => {
       <Video />
       <Details />
       <Projects />
-      <Colorchanger />
-      <FAQAccordion/>
+      <Colorchanger /> 
     </div>
   );
 };

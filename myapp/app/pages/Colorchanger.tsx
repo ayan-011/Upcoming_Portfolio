@@ -1,38 +1,78 @@
-'use client'
+"use client";
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import React from 'react'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
 import Skills from "./Skills";
+import Questions from "./Questions";
+import FolderHoverReveal from "../components/FolderHoverReveal";
+import GlassFolder from "../components/FolderHoverReveal";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const Colorchanger = () => {
-
-    const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
- gsap.to("body", {
-  backgroundColor: "#0F6292",
-  ease: "none",
-  scrollTrigger: {
-    trigger: sectionRef.current,
-    start: "top 40%", // starts when section just enters
-    end: "top 60%",   // finishes when section is almost at the top
-    scrub: 1,         // smoother than true
-    // markers: true,    // remove after testing  
-  },
-});
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    // Starting color
+    gsap.set("body", {
+      backgroundColor: "#EEECE6",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+    });
+
+    // VERY EARLY: Cream → Blue
+    tl.to("body", {
+      backgroundColor: "#0F6292",
+      duration: 0.08,
+      ease: "none",
+    });
+
+    // Stay blue for the middle
+    tl.to("body", {
+      backgroundColor: "#0F6292",
+      duration: 1.5,
+      ease: "none",
+    });
+
+    // Blue → Cream near Questions
+    tl.to("body", {
+      backgroundColor: "#EEECE6",
+      duration: 0.2,
+      ease: "none",
+    });
+
+    return () => {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+    };
   }, []);
 
   return (
-    <div
-        ref={sectionRef}
-        className="  h-screen   "
-      >
+    <div ref={sectionRef} className="h-fit">
+      <Skills />
 
-        <Skills/>
-        
-      </div>
-  )
-}
+        <GlassFolder/>
+      <Questions />
+  
 
-export default Colorchanger
+
+    
+ 
+    </div>
+  );
+};
+
+export default Colorchanger;
