@@ -7,11 +7,7 @@ interface FAQItem {
 }
 
 const faqs: FAQItem[] = [
-  {
-    question: "Who is this course for?",
-    answer:
-      "This is for creators, freelancers, and anyone ready to turn their creativity into a sustainable career, whether you're starting from scratch or looking to level up.",
-  },
+  
   {
     question: "Do I need expensive gear to start?",
     answer:
@@ -39,15 +35,15 @@ const faqs: FAQItem[] = [
   },
 ];
 
-export default function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+export default function Questions() {
+  const [openIndex, setOpenIndex] = useState<number | null>(-1);
 
   const toggle = (index: number) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
-    <section className="min-h-screen w-full bg-[#EEECE6] px-6 py-20 md:px-16 lg:px-24">
+    <section className="min-h-screen w-full bg-[] px-6 py-20 md:px-16 lg:px-24">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-[minmax(0,320px)_1fr] md:gap-16">
         {/* Left column */}
         <div>
