@@ -26,3 +26,59 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
+
+
+/* cloud motion in footer  */
+
+@keyframes cloudMove1 {
+  0% {
+    transform: translateX(-30px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes cloudMove2 {
+  0% {
+    transform: translateX(60px);
+  }
+  50% {
+    transform: translateX(-80px);
+  }
+  100% {
+    transform: translateX(60px);
+  }
+}
+
+@keyframes cloudMove3 {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+.animate-cloud-1 {
+  animation: cloudMove1 20s ease-in-out infinite;
+}
+
+.animate-cloud-2 {
+  animation: cloudMove2 22s ease-in-out infinite;
+}
+
+.animate-cloud-3 {
+  animation: cloudMove3 22s ease-in-out infinite;
+}
+/* cloud motion in footer  */

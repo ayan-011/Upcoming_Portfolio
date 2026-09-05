@@ -11,6 +11,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import FAQAccordion from "./pages/Questions";
+import Footer from "./pages/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,6 +45,7 @@ const Page = () => {
       <Details />
       <Projects />
       <Colorchanger /> 
+      <Footer/>
     </div>
   );
 };
