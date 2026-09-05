@@ -28,11 +28,7 @@ const faqs: FAQItem[] = [
     answer:
       "Yes. Lessons are short and self-paced, and most students spend 3-5 hours a week on it. You can go faster or slower depending on how much time you have.",
   },
-  {
-    question: "Will this work for my niche?",
-    answer:
-      "The framework is niche-agnostic, it's about the underlying business and creative skills, so it applies whether you're in photography, design, writing, video, or something else entirely.",
-  },
+  
 ];
 
 export default function Questions() {
@@ -43,17 +39,17 @@ export default function Questions() {
   };
 
   return (
-    <section className="min-h-screen w-full bg-[] px-6 py-20 md:px-16 lg:px-24">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-[minmax(0,320px)_1fr] md:gap-16">
+    <section className="min-h-screen w-full bg-[] px-6 py-20 md:px-16 lg:px-24 flex items-center ">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-[minmax(0,320px)_1fr] md:gap-16   items-center">
         {/* Left column */}
         <div>
           <h2 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-neutral-900 md:text-5xl">
             Everything You Need to Know Before You Start
           </h2>
-          <p className="mt-8 max-w-xs text-[15px] leading-relaxed text-neutral-800">
+          <p className="mt-8 max-w-xs text-[18px] font-semibold leading-relaxed text-neutral-800">
             Here's the lowdown on how the Creator Blueprint works, what
             you'll get, and how it can help you. If you don't see your
-            question here, just reach out, I'm happy to help.
+            question here.
           </p>
         </div>
 
@@ -69,7 +65,7 @@ export default function Questions() {
               >
                 <div
                   aria-expanded={isOpen}
-                  className="flex w-full items-start justify-between gap-6 px-8 py-7 text-left"
+                  className="flex w-full items-start justify-between gap-6 px-8 py-5 text-left"
                 >
                   <span className="text-2xl font-medium leading-snug text-neutral-900 md:text-[26px]">
                     {item.question}
