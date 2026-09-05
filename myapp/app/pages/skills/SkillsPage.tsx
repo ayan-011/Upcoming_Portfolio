@@ -112,12 +112,12 @@ function PushPin({ color }: { color: string }) {
   return (
     <span
       aria-hidden="true"
-      className="absolute -top-3 left-1/2 z-20 h-6 w-6 -translate-x-1/2 rounded-full shadow-[2px_4px_5px_rgba(0,0,0,0.35)]"
+      className="absolute top-1  left-2/3 z- h-3 w-3 -translate-x-1/2 rounded-full shadow-[2px_4px_5px_rgba(0,0,0,0.35)]"
       style={{
         background: `radial-gradient(circle at 32% 25%, #ffffff99 0 10%, ${color} 28%, #1118 100%)`,
       }}
     >
-      <span className="absolute left-1/2 top-5 h-3 w-1 -translate-x-1/2 rounded-b-full bg-black/30" />
+      {/* <span className="absolute left-1/2 top-5 h-3 w-1 -translate-x-1/2 rounded-b-full bg-black/30" /> */}
     </span>
   );
 }
@@ -125,18 +125,22 @@ function PushPin({ color }: { color: string }) {
 function SkillCard({ skill }: { skill: Skill }) {
   return (
     <article
-      className="group relative min-h-[190px] cursor-default bg-[#f7f0dc] p-5 text-[#263326] shadow-[5px_8px_12px_rgba(0,0,0,0.22),inset_0_0_18px_rgba(125,95,45,0.08)] transition duration-300 ease-out hover:-translate-y-2 hover:rotate-0 hover:shadow-[8px_18px_22px_rgba(0,0,0,0.3)]"
+      className="group relative min-h-[190px] cursor-default bg-[#f7f0dc] p-5 text-[#263326]
+       shadow-[5px_8px_12px_rgba(0,0,0,0.22),inset_0_0_18px_rgba(125,95,45,0.08)] 
+       transition duration-300 ease-out hover:-translate-y-2 hover:rotate-2 hover:shadow-[8px_18px_22px_rgba(0,0,0,0.3)]"
       style={{
         transform: `rotate(${skill.rotation})`,
         clipPath:
           "polygon(0.5% 1%, 98.5% 0%, 100% 98%, 1% 100%, 0% 50%)",
       }}
-    >
+    > 
+
       <PushPin color={skill.color} />
+
 
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <div className="absolute left-3 top-3 h-px w-12 rotate-[-8deg] bg-[#8d7651]" />
-        <div className="absolute bottom-5 right-4 h-px w-10 rotate-[12deg] bg-[#8d7651]" />
+        <div className="absolute bottom-5 right-4 h-[0.5px] w-10 rotate-[12deg] bg-[#8d7651]" />
       </div>
 
       <div className="relative flex h-full flex-col">
@@ -182,14 +186,24 @@ export default function SkillsPage() {
   return (
     <main className="min-h-screen overflow-hidden   px-4 py-16 text-white sm:px-8 lg:px-12">
       <section className="mx-auto max-w-7xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10 w-full   ">
           {/* <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-white/70">
             tools of the trade
           </p> */}
+      
+ <div className="relative mx-auto w-fit px-10 py-5 -rotate-5">
 
-          <h1 className="text-4xl font-black tracking-[-0.04em] sm:text-6xl">
-            Things I Build With
-          </h1>
+    <img
+      src="/pngs/paperstrip.png"
+      alt=""
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] opacity-80"
+    />
+
+    <h1 className="relative z-10 text-4xl font-black tracking-[-0.04em] sm:text-4xl">
+      Things I Build With
+    </h1>
+
+  </div>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-white/70 sm:text-base">
             {/* A collection of technologies, tools, and skills pinned to my
