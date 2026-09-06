@@ -54,46 +54,47 @@ function Card({ card, index }: CardProps) {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-   
-    
     <motion.div
       ref={ref}
       style={{ x, opacity }}
-      className="flex gap-6 sm:gap-20 md:gap-40 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[70vh] items-center  px-2"
-      >
-      
+      className="flex mt-10 lg:mt-0 flex-col sm:flex-row gap-6  sm:gap-15 md:gap-60 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[70vh] items-center "
+    >
       {/* Image */}
-      <div className={index % 2 !== 0 ? "order-2" : "order-1"}>
+      <div className={index % 2 !== 0 ? "sm:order-2" : "sm:order-1"}>
         <img
           src={card.photo}
           alt={card.title}
-          className="w-[50vw] sm:w-[30vw]    rounded-lg"
-          />
+          className="w-full  md:w-[120vw] lg:w-[90vw] rounded-lg"
+        />
       </div>
 
       {/* Text */}
       <div
-        className={`flex flex-col justify-center sm:gap-5 gap-2 md:w-[22vw]  sm:w-[35vw] w-[45vw] bg-red-9 ${
-          index % 2 !== 0 ? "order-1" : "order-2"
+        className={`flex flex-col justify-center gap-3 sm:gap-5    w-full   ${
+          index % 2 !== 0 ? "sm:order-1" : "sm:order-2"
         }`}
-        >
-        <h1 className="text-4xl sm:text-xl md:text-[5vw] font-bold text-[#2b9ddf] whitespace-pre-line leading-[1]">{card.heading}</h1>
-        <p className="text-gray-300 text-[12px] sm:text-[1.5vw] leading-[1]">{card.description}</p>
+      >
+        <h1 className="text-4xl  sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#2b9ddf] whitespace-pre-line leading-[1]">
+          {card.heading}
+        </h1>
+
+        <p className="text-white/60 text-[16px] text-[19px]   leading-[1] ">
+          {card.description}
+        </p>
       </div>
     </motion.div>
-        
   );
 }
 
 const Details = () => {
   return (
-    <div className="bg-black   text-white flex flex-col items-center py-20">
-      <div className="  w-full  h-fit  ">
-        <span className="font-bold ml-65 text-4xl text-white/70 " >COURSES THAT I HAVE FOLLOWED </span>
-      </div>
+    <div className="bg-black   text-white flex flex-col items-center py-20   gap-9 max-w-3xl sm:max-w-full    px-4 sm:px-15">
+      <div className=" h-fit  w-full  lg:w-[128vh] ">
+        <span className="font-bold  text-lg lg:text-4xl text-white/70 " >COURSES THAT I HAVE FOLLOWED </span>
       {cards.map((card, index) => (
         <Card key={index} card={card} index={index} />
       ))}
+      </div>
     </div>
   );
 };
