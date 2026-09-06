@@ -28,9 +28,10 @@ const cards = [
   {
     photo: "/project.jpg",
     title: "Photography",
-    descriptio:
-      "Minimal gallery showcasing high quality photography.",
+    description:
+      "Premium ecommerce design focused on storytelling and products.",
   },
+   
   {
     photo: "/project.jpg",
     title: "Agency Website",
@@ -41,7 +42,7 @@ const cards = [
 
 const Projects = () => {
   return (
-   <section className="w-full bg-white">
+   <section className="w-full bg-[#EEECE6]">
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-r-2 border-b-2 border-[#0F6292]">
 
     {cards.map((card, index) => (
@@ -59,16 +60,16 @@ const Projects = () => {
         </div>
 
         {/* Content */}
-        <div className="bg-white p-8 min-h-[220px] flex flex-col justify-center">
+        <div className="bg-[#EEECE6] p-8 min-h-[220px] flex flex-col justify-center">
           <span className="text-orange-500 text-sm font-medium">
             Featured Project
           </span>
 
-          <h2 className="mt-5 text-3xl font-semibold">
+          <h2 className="mt-5 text-3xl font-semibold text-black">
             {card.title}
           </h2>
 
-          <p className="mt-5 text-neutral-600 leading-8">
+          <p className="mt-5 text-neutral-600 leading-8 ">
             {card.description}
           </p>
         </div>

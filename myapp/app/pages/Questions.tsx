@@ -65,9 +65,9 @@ export default function Questions() {
               >
                 <div
                   aria-expanded={isOpen}
-                  className="flex w-full items-start justify-between gap-6 px-8 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-6 px-4 sm:px-8 py-5 text-left"
                 >
-                  <span className="text-2xl font-medium leading-snug text-neutral-900 md:text-[26px]">
+                  <span className="text-lg sm:text-2xl font-medium  leading-snug text-neutral-900 md:text-[26px]">
                     {item.question}
                   </span>
                   <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-neutral-900">

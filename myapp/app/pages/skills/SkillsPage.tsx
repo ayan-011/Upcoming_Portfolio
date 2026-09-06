@@ -125,7 +125,7 @@ function PushPin({ color }: { color: string }) {
 function SkillCard({ skill }: { skill: Skill }) {
   return (
     <article
-      className="group relative min-h-[190px] cursor-default bg-[#f7f0dc] p-5 text-[#263326]
+      className="group relative  h-[107px]  sm:min-h-[130px] lg:min-h-[190px] cursor-default bg-[#f7f0dc] p-2 py-6 sm:py-0 md:p-5 text-[#263326]
        shadow-[5px_8px_12px_rgba(0,0,0,0.22),inset_0_0_18px_rgba(125,95,45,0.08)] 
        transition duration-300 ease-out hover:-translate-y-2 hover:rotate-2 hover:shadow-[8px_18px_22px_rgba(0,0,0,0.3)]"
       style={{
@@ -139,12 +139,12 @@ function SkillCard({ skill }: { skill: Skill }) {
 
 
       <div className="pointer-events-none absolute inset-0 opacity-30">
-        <div className="absolute left-3 top-3 h-px w-12 rotate-[-8deg] bg-[#8d7651]" />
-        <div className="absolute bottom-5 right-4 h-[0.5px] w-10 rotate-[12deg] bg-[#8d7651]" />
+        <div className="absolute left-3 top-3 h-px w-12 rotate-[-8deg] bg-[#8d7651] hidden md:flex" />
+        <div className="absolute bottom-2 sm:bottom-5 right-4 h-[0.5px] w-10 rotate-[12deg] bg-[#8d7651] " />
       </div>
 
       <div className="relative flex h-full flex-col">
-        <div className="mb-5 flex items-start justify-between gap-3">
+        <div className=" mb-2 sm:mb-5 flex items-start justify-between gap-3">
           <div
             className="flex h-11 w-11 items-center justify-center rounded-md font-mono text-sm font-black shadow-inner"
             style={{
@@ -158,20 +158,20 @@ function SkillCard({ skill }: { skill: Skill }) {
             {skill.icon}
           </div>
 
-          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#6c725f]">
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#6c725f] hidden lg:flex">
             {skill.category}
           </span>
         </div>
 
-        <h3 className="font-mono text-xl font-bold tracking-tight">
+        <h3 className="font-mono text-[10px] sm:text-sm  lg:text-xl font-bold tracking-tight ">
           {skill.name}
         </h3>
 
-        <p className="mt-2 max-w-[220px] text-sm leading-5 text-[#626653]">
+        <p className="mt-2 max-w-[220px] text-sm leading-5 text-[#626653] hidden lg:flex">
           {skill.description}
         </p>
 
-        <div className="mt-auto pt-5">
+        <div className="mt-auto pt-5 hidden lg:flex">
           <div className="h-px w-full bg-[#d9cdb0]" />
           <span className="mt-2 block font-mono text-[9px] uppercase tracking-[0.2em] text-[#8a806a]">
             currently learning
@@ -184,14 +184,14 @@ function SkillCard({ skill }: { skill: Skill }) {
 
 export default function SkillsPage() {
   return (
-    <main className="min-h-screen overflow-hidden   px-4 py-16 text-white sm:px-8 lg:px-12">
+    <main className="   min-h-screen overflow-hidden  px-4 py-16 text-white sm:px-8 lg:px-12">
       <section className="mx-auto max-w-7xl">
         <div className="mb-10 w-full   ">
           {/* <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-white/70">
             tools of the trade
           </p> */}
       
- <div className="relative mx-auto w-fit px-10 py-5 -rotate-5">
+ <div className="relative mx-auto w-fit px-10 py-5 -rotate-5 select-none pointer-events-none">
 
     <img
       src="/pngs/paperstrip.png"
@@ -199,7 +199,7 @@ export default function SkillsPage() {
       className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] opacity-80"
     />
 
-    <h1 className="relative z-10 text-4xl font-black tracking-[-0.04em] sm:text-4xl">
+    <h1 className="relative z-10 text-lg md:text-4xl font-semibold text-white/60 tracking-[-0.04em] sm:text-4xl ">
       Things I Build With
     </h1>
 
@@ -212,7 +212,7 @@ export default function SkillsPage() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[22px] border-[14px] border-[#6b452b] bg-[#245c3c] p-5 shadow-[0_24px_55px_rgba(32,48,30,0.28),inset_0_0_0_3px_#9a6b43] sm:p-10 lg:p-14">
+        <div className="relative overflow-hidden rounded-[22px] border-[14px] border-[#6b452b] bg-[#245c3c] p-5 shadow-[0_9px_15px_rgba(0,0,0,0.88),inset_0_0_0_3px_#9a6b43] sm:p-10 lg:p-14">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-70"
@@ -229,18 +229,18 @@ export default function SkillsPage() {
 
           <div className="pointer-events-none absolute inset-0 rounded-[8px] shadow-[inset_0_0_55px_rgba(0,0,0,0.3)]" />
 
-          <div className="relative grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="relative grid grid-cols-3 gap-7 sm:grid-cols-4 ">
             {skills.map((skill) => (
               <SkillCard key={skill.name} skill={skill} />
             ))}
           </div>
 
           <div className="relative mt-10 flex items-center justify-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-[#d5a94f] shadow-[0_1px_4px_#0008]" />
+            {/* <span className="h-2 w-2 rounded-full bg-[#d5a94f] shadow-[0_1px_4px_#0008]" />
             <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-[#c9dbc7]">
               pinned to the board
             </span>
-            <span className="h-2 w-2 rounded-full bg-[#d5a94f] shadow-[0_1px_4px_#0008]" />
+            <span className="h-2 w-2 rounded-full bg-[#d5a94f] shadow-[0_1px_4px_#0008]" /> */}
           </div>
         </div>
       </section>
