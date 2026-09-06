@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import About from "./about";
 
 
 
@@ -90,7 +91,10 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
 
 
     return (
-       <main className="relative bg-red- min-h-screen sm:min-h-[120vh] w-full bg-black overflow-hidden ">
+        <>
+        
+        
+       <main className="z-20 relative bg-red- min-h-screen sm:min-h-[120vh] w-full bg-black overflow-visible ">
 
   {/* Grid */}
   <div
@@ -114,7 +118,7 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
 
   {/* Background image */}
   <div
-    className="absolute mt-2  md:mt-0 left-1/2 top-2/5 -translate-x-1/2 -translate-y-1/2 z-10 xl:w-[190vh] xl:h-[40vw] w-[80vh] h-[80vw]  rounded-2xl lg    xl:rotate-none rotate-90 " 
+    className="absolute mt-2  md:mt-0 left-1/2 top-2/5 -translate-x-1/2 -translate-y-1/2 z-10 xl:w-[190vh] xl:h-[40vw] w-[80vh]  h-[90vw]  rounded-2xl lg    xl:rotate-none rotate-90 " 
     style={{
       backgroundImage: "url('/homebg.jpg')",
       backgroundSize: "cover",
@@ -127,9 +131,9 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
                 style={{ y }}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30   bg-red- text-center"
             >
-                <h1 className="tracking-tighter lg:leading-16 font-extrabold text-[5vw] ">TEXT SPEED <br /> TESTING</h1>
+                <h1 className="tracking-tighter leading-10 sm:leading-13  lg:leading-21 font-extrabold text-[8vw] sm:text-[6vw] ">TEXT SPEED TESTING</h1>
 
-                <h1 className="text-xl lg:text-[1vw]  text-white/40 mt-12 ">No fluff, just a blueprint</h1>
+                <h1 className="text-[10px] lg:text-[1vw]  text-white/40 mt-3 ">No fluff, just a blueprint</h1>
             </motion.div>
 
             <DraggableImage
@@ -140,18 +144,19 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
                 className="w-[35vw] sm:w-[20vw]  rotate-12 z-20 drop-shadow-2xl"
             />
 
+
              
             <DraggableImage
                 src="pngs/diary.png"
-                initialXPct={63}
+                initialXPct={68}
                 initialYPct={30}
                  parallaxSpeed={0.2}
                 className="w-[50vw]  sm:w-[30vw] -rotate-12 z-20"
             />
             <DraggableImage
                 src="pngs/pencil.webp"
-                initialXPct={75}
-                initialYPct={30}
+                initialXPct={85}
+                initialYPct={36}
                  parallaxSpeed={-0.3}
                 className="w-[5vw] sm:w-[2.5vw]  rotate-12 z-30"
             />
@@ -159,10 +164,10 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
             <DraggableImage
                 src="pngs/cloude.webp"
                 initialXPct={5}
-                initialYPct={60}
+                initialYPct={70}
                 parallaxSpeed={-0.2}
                 returnToOrigin
-                className="w-[40vw] sm:w-[20vw] z-30"
+                className="w-[40vw] sm:w-[20vw] z-50 absolute   "
             />
             <DraggableImage
                 src="pngs/chip.webp"
@@ -172,5 +177,9 @@ const y = useTransform(scrollY, [0, 1000], [0, -120]); // moves down 30px
                 className="w-[9vw] sm:w-[7vw] z-30 -rotate-12"
             />
         </main>
+
+   <About />
+
+        </>
     );
 }
