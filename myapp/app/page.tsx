@@ -2,8 +2,7 @@
 
 import { useEffect } from "react";
 import Home from "./pages/Home";
-import Projects from "./pages/projects";
-import Video from "./pages/video";
+import Projects from "./pages/projects"; 
 import Colorchanger from "./pages/Colorchanger";
 import Details from "./pages/Details";
 
@@ -41,7 +40,6 @@ const Page = () => {
   return (
     <div className="overflow-hidden  ">
       <Home />
-      <Video />
       <Details />
       <Projects />
       <Colorchanger /> 

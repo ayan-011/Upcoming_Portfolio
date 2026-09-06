@@ -58,15 +58,7 @@ export default function GlassyFolder() {
 
   return (
     <div
-      style={{
-        minHeight: "70vh",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        // background: "radial-gradient(circle at 30% 20%, #0e1c3f 0%, #060912 55%, #020308 100%)",
-        // fontFamily: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
-      }}
+className="min-h-[40vh] md:min-h-[70vh] w-full flex items-center justify-center"
     >
       <div
         role="button"
@@ -93,6 +85,8 @@ export default function GlassyFolder() {
         {/* an inset fade, so if it bleeds through the blur it blends   */}
         {/* into shadow instead of showing as a mismatched seam.        */}
         {/* ---------------------------------------------------------- */}
+         {/* The tab / grip on top */}
+  
         <div
           style={{
             position: "absolute",
@@ -104,6 +98,7 @@ export default function GlassyFolder() {
             background: "linear-gradient(180deg, #8FD3FE 0%, #5CB6F5 40%, #3B9AE0 70%, #2678BE 100%)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -50px 60px -20px rgba(15,70,120,0.85)",
             zIndex: 5,
+            
           }}
         />
 
@@ -132,7 +127,7 @@ export default function GlassyFolder() {
                 marginTop: -92,
                 borderRadius: 13,
                 background: "linear-gradient(165deg, #ffffff 0%, #f1f3f8 60%, #e6e9f2 100%)",
-                boxShadow: "0 16px 32px rgba(2, 8, 30, 0.45), 0 2px 6px rgba(2, 8, 30, 0.25)",
+                boxShadow: "0 5px 10px rgba(1, 3, 2, 0.2), 0 0px 6px rgba(0, 0, 0, 0)",
                 transformOrigin: "50% 100%",
                 zIndex: 15,
                 willChange: "transform, opacity",
@@ -195,10 +190,12 @@ export default function GlassyFolder() {
             backdropFilter: "blur(10px) saturate(160%)",
             WebkitBackdropFilter: "blur(10px) saturate(160%)",
             border: "1px solid rgba(255,255,255,0.4)",
-            boxShadow: "0 24px 46px rgba(10, 60, 110, 0.4), inset 0 1px 0 rgba(255,255,255,0.4)",
+            // boxShadow: "0 2px rgba(10, 60, 110, 0.4), inset 0 1px 0 rgba(255,255,255,0.4)",
             transformOrigin: "50% 100%",
             transformStyle: "preserve-3d",
             zIndex: 20,
+            
+             
           }}
         />
       </div>
