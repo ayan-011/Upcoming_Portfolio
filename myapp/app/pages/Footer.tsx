@@ -1,5 +1,10 @@
 "use client";
 
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FaSquareXTwitter } from 'react-icons/fa6'
+import { MdEmail } from 'react-icons/md'
+
+
 import React from "react";
 
 const Footer = () => {
@@ -45,7 +50,7 @@ const Footer = () => {
     contact
     relative
     w-full
-    h-[400px]
+    h-[370px]
     rounded-[2rem]
     border border-white/40
     bg-white/10
@@ -60,16 +65,34 @@ const Footer = () => {
   {/* Glass highlight */}
   <div className="absolute  inset-0 rounded-[2rem] bg-gradient-to-br from-white/25 via-transparent to-white/5 pointer-events-none" />
 
-      <div className="content  px-10 py-5">
+      <div className="content  px-10 py-5 flex flex-col gap-3">
         <span className="text-[4vw] font-bold   text-white">Contact!</span>
 
-        <div className="icons flex gap-3">
+        {/* Ions  */}
+            <div className="address flex flex-row gap-2  bg-red-90   text-[32px] text-zinc-500">
+                 
+                 <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ayaan_saifi__1/">
+                    <FaInstagram className='cursor-pointer text-white hover:text-zinc-200'/>
+                 </a>
+                 <a target="_blank" rel="noopener noreferrer" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=jrjtXLFVCCSxWhLxssDthdgHtzLJHrjBdhLLZTgLJPZbGcZWxzprJxSBfSDnvzTzvccVrZlV">
+                    <MdEmail className='cursor-pointer text-white hover:text-zinc-200'/> 
+                 </a>
+                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ayaan-saifi-782505319/">
+                    <FaLinkedin className='cursor-pointer text-white hover:text-zinc-200'/>
+                 </a>
+                 <a target="_blank" rel="noopener noreferrer" href="https://x.com/ayaan_saifi_1">
+                    <FaSquareXTwitter className='cursor-pointer text-white hover:text-zinc-200'/>
+                 </a>
+                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/ayan-011">
+                    <FaGithub className='cursor-pointer text-white hover:text-zinc-200'/>
+                 </a>
+                 <a target="_blank" rel="noopener noreferrer" href="https://wa.me/919899729915">
+                    <FaWhatsapp  className='cursor-pointer text-white hover:text-zinc-200'/>
+                 </a>
+                  
+                  
 
-            {/* <img src="/icons/insta.png" alt="" className="w-12   hover:text-black" /> */}
-
-          
-
-        </div>
+            </div> 
       </div>
 </div>
 
