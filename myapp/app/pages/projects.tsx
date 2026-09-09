@@ -5,37 +5,37 @@ import { MdArrowOutward } from "react-icons/md";
 
 const cards = [
   {
-    photo: "/project.jpg",
+    bg: "/projectThumbnails/krsna.png",
     title: "Creative Portfolio",
     description:
       "Modern portfolio with smooth animations and immersive scrolling experience.",
   },
   {
-    photo: "/project.jpg",
+    bg: "/projectThumbnails/portfolio.png",
     title: "Music Landing Page",
     description:
       "Interactive landing page with cinematic transitions and premium UI.",
   },
   {
-    photo: "/project.jpg",
+    bg: "/projectThumbnails/timer.png",
     title: "3D Experience",
     description:
       "Three.js powered website with scroll-driven camera movement.",
   },
   {
-    photo: "/project.jpg",
+    bg: "/projectThumbnails/sportech.png",
     title: "E-Commerce",
     description:
       "Premium ecommerce design focused on storytelling and products.",
   },
   {
-    photo: "/project.jpg",
-    title: "Photography",
+    bg: "/projectThumbnails/videoplayer.png",
+    title: "bggraphy",
     description:
       "Premium ecommerce design focused on storytelling and products.",
   },
   {
-    photo: "/project.jpg",
+    bg: "/projectThumbnails/krsna.png",
     title: "Agency Website",
     description:
       "Award-winning inspired agency website with bold typography.",
@@ -60,18 +60,29 @@ const Projects = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`border-l-2 border-t-2 border-[#0F6292] overflow-hidden group cursor-pointer ${getVisibilityClass(
+              className={`border-l-2 border-t-2 border-[#0F6292] overflow-hidden   ${getVisibilityClass(
                 index
               )}`}
             >
               {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={card.photo}
-                  alt={card.title}
-                  className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+              <div className="  h-[350px] bg-red-700 flex items-center justify-center p-5"
+                style={{
+                  backgroundImage: "url('/homebg.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center", 
+                }}>
+
+                <div className="w-full  bg-white   overflow-hidden">
+                  <img
+                    src={card.bg}
+                    alt={card.title}
+                    className="w-full object-cover transition-transform duration-700  hover:opacity-95 cursor-pointer "
+                  />
+
+                </div>
               </div>
+
+
 
               {/* Content */}
               <div className="bg-[#EEECE6] p-8 min-h-[220px] flex flex-col justify-center">
