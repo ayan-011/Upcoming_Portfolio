@@ -65,18 +65,18 @@ const Projects = () => {
               )}`}
             >
               {/* Image */}
-              <div className="  h-[350px] bg-red-700 flex items-center justify-center p-5"
+              <div className="  h-[350px] bg-black  flex items-center justify-center p-5"
                 style={{
                   backgroundImage: "url('/homebg.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center", 
                 }}>
 
-                <div className="w-full  bg-white   overflow-hidden">
+                <div className="w-full  bg-black   overflow-hidden shadow-2xl shadow-black">
                   <img
                     src={card.bg}
                     alt={card.title}
-                    className="w-full object-cover transition-transform duration-700  hover:opacity-95 cursor-pointer "
+                    className="w-full    object-cover transition-transform duration-700  hover:opacity-95 cursor-pointer "
                   />
 
                 </div>

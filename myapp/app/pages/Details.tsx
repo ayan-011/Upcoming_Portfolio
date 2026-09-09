@@ -57,7 +57,7 @@ function Card({ card, index }: CardProps) {
     <motion.div
       ref={ref}
       style={{ x, opacity }}
-      className="flex mt-10 lg:mt-0 flex-col sm:flex-row gap-6  sm:gap-15 md:gap-60 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[70vh] items-center "
+      className="flex mt-10 lg:mt-0 flex-col sm:flex-row gap-6  sm:gap-15 md:gap-60 min-h-[40vh] sm:min-h-[30vh] xl:min-h-[60vh] items-center "
     >
       {/* Image */}
       <div className={index % 2 !== 0 ? "sm:order-2" : "sm:order-1"}>
