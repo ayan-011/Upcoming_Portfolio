@@ -9,7 +9,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full min-h-[700px] overflow-hidden">
+    <footer className="relative w-full min-h-[700px] overflow-hidden select-none pointer-events-none">
       {/* Sky background */}
       <img
         src="/sky.png"
@@ -50,7 +50,7 @@ const Footer = () => {
     contact
     relative
     w-full
-    h-[370px]
+    h-[320px]
     rounded-[2rem]
     border border-white/40
     bg-white/10
@@ -63,10 +63,12 @@ const Footer = () => {
   "
         >
           {/* Glass highlight */}
-          <div className="absolute  inset-0 rounded-[2rem] bg-gradient-to-br from-white/25 via-transparent to-white/5 pointer-events-none" />
+          <div className="absolute    inset-0 rounded-[2rem] bg-gradient-to-br from-white/25 via-transparent to-white/5 pointer-events-none" />
 
-          <div className="content  px-10 py-5 flex flex-col gap-3">
-            <span className="text-[4vw] font-bold   text-white">Contact!</span>
+          <div className="content flex flex-row justify-between px-10 py-5 w-full bg-   flex-col gap-3 h-full">
+
+            <div className="  w-fit">
+            <span className="text-[4vw] font-extrabold  text-white">Contact!</span>
 
             {/* Ions  */}
             <div className="address flex flex-row gap-2  bg-red-90   text-[32px] text-zinc-500">
@@ -93,7 +95,24 @@ const Footer = () => {
 
 
             </div>
+
+            </div>
+
+            <div className="thanks flex flex-col justify-center  w-fit text-[7vw] leading-[75px]    tracking-wide ">
+              <span className='font-opener '>THANKSSS 
+                <br />
+                FORRRRRR
+                <br />
+                WATCHING</span>
+            </div>
+
+
           </div>
+          
+
+         
+
+
         </div>
 
       </div>
